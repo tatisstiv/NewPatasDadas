@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Voluntarios:</strong>
+  <%= @passeio.Voluntarios %>
+</p>
+
+<p>
+  <strong>Animals:</strong>
+  <%= @passeio.Animals %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @passeio.data %>
+</p>
+
+<p>
+  <strong>Timestamps:</strong>
+  <%= @passeio.timestamps %>
+</p>
+
+<%= link_to 'Edit', edit_passeio_path(@passeio) %> |
+<%= link_to 'Back', passeios_path %>

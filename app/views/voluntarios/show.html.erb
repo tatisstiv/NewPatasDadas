@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @voluntario.tipo %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @voluntario.nome %>
+</p>
+
+<p>
+  <strong>Timestamps:</strong>
+  <%= @voluntario.timestamps %>
+</p>
+
+<%= link_to 'Edit', edit_voluntario_path(@voluntario) %> |
+<%= link_to 'Back', voluntarios_path %>

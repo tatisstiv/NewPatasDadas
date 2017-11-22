@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Passeios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Voluntarios</th>
+      <th>Animals</th>
+      <th>Data</th>
+      <th>Timestamps</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @passeios.each do |passeio| %>
+      <tr>
+        <td><%= passeio.Voluntarios %></td>
+        <td><%= passeio.Animals %></td>
+        <td><%= passeio.data %></td>
+        <td><%= passeio.timestamps %></td>
+        <td><%= link_to 'Show', passeio %></td>
+        <td><%= link_to 'Edit', edit_passeio_path(passeio) %></td>
+        <td><%= link_to 'Destroy', passeio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Passeio', new_passeio_path %>

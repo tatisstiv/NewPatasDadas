@@ -1,0 +1,37 @@
+<%= form_with(model: passeio, local: true) do |form| %>
+  <% if passeio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(passeio.errors.count, "error") %> prohibited this passeio from being saved:</h2>
+
+      <ul>
+      <% passeio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Voluntarios_id %>
+    <%= form.text_field :Voluntarios_id, id: :passeio_Voluntarios_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Animals_id %>
+    <%= form.text_field :Animals_id, id: :passeio_Animals_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.datetime_select :data, id: :passeio_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timestamps %>
+    <%= form.text_field :timestamps, id: :passeio_timestamps %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

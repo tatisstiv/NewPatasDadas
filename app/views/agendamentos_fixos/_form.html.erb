@@ -1,0 +1,37 @@
+<%= form_with(model: agendamentos_fixo, local: true) do |form| %>
+  <% if agendamentos_fixo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agendamentos_fixo.errors.count, "error") %> prohibited this agendamentos_fixo from being saved:</h2>
+
+      <ul>
+      <% agendamentos_fixo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Voluntarios_id %>
+    <%= form.text_field :Voluntarios_id, id: :agendamentos_fixo_Voluntarios_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Animals_id %>
+    <%= form.text_field :Animals_id, id: :agendamentos_fixo_Animals_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dia_da_semana %>
+    <%= form.text_field :dia_da_semana, id: :agendamentos_fixo_dia_da_semana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timestamps %>
+    <%= form.text_field :timestamps, id: :agendamentos_fixo_timestamps %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

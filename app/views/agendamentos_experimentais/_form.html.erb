@@ -1,0 +1,37 @@
+<%= form_with(model: agendamentos_experimentai, local: true) do |form| %>
+  <% if agendamentos_experimentai.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agendamentos_experimentai.errors.count, "error") %> prohibited this agendamentos_experimentai from being saved:</h2>
+
+      <ul>
+      <% agendamentos_experimentai.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Voluntarios_id %>
+    <%= form.text_field :Voluntarios_id, id: :agendamentos_experimentai_Voluntarios_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Animals_id %>
+    <%= form.text_field :Animals_id, id: :agendamentos_experimentai_Animals_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.date_select :data, id: :agendamentos_experimentai_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timestamps %>
+    <%= form.text_field :timestamps, id: :agendamentos_experimentai_timestamps %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
