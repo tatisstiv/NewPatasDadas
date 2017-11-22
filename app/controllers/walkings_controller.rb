@@ -15,6 +15,8 @@ class WalkingsController < ApplicationController
   # GET /walkings/new
   def new
     @walking = Walking.new
+    @walking.volunteer_id = 1
+    @walking.animal_id = params[:animal_id]
   end
 
   # GET /walkings/1/edit

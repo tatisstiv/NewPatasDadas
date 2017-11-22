@@ -15,6 +15,8 @@ class ExperimentalSchedulingsController < ApplicationController
   # GET /experimental_schedulings/new
   def new
     @experimental_scheduling = ExperimentalScheduling.new
+    @experimental_scheduling.volunteer_id = 1
+    @experimental_scheduling.animal_id = params[:animal_id]
   end
 
   # GET /experimental_schedulings/1/edit

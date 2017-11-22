@@ -15,6 +15,8 @@ class FixedSchedulingsController < ApplicationController
   # GET /fixed_schedulings/new
   def new
     @fixed_scheduling = FixedScheduling.new
+    @fixed_scheduling.volunteer_id = 1
+    @fixed_scheduling.animal_id = params[:animal_id]
   end
 
   # GET /fixed_schedulings/1/edit
