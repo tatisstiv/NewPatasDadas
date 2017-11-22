@@ -1,0 +1,32 @@
+<%= form_with(model: experimental_scheduling, local: true) do |form| %>
+  <% if experimental_scheduling.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(experimental_scheduling.errors.count, "error") %> prohibited this experimental_scheduling from being saved:</h2>
+
+      <ul>
+      <% experimental_scheduling.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date_time %>
+    <%= form.datetime_select :date_time, id: :experimental_scheduling_date_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :volunteer_id %>
+    <%= form.text_field :volunteer_id, id: :experimental_scheduling_volunteer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :animal_id %>
+    <%= form.text_field :animal_id, id: :experimental_scheduling_animal_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

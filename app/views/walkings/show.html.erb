@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @walking.date %>
+</p>
+
+<p>
+  <strong>Volunteer:</strong>
+  <%= @walking.volunteer %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @walking.animal %>
+</p>
+
+<%= link_to 'Edit', edit_walking_path(@walking) %> |
+<%= link_to 'Back', walkings_path %>

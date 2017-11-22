@@ -1,1 +1,0 @@
-json.partial! "agendamentos_experimentais/agendamentos_experimentai", agendamentos_experimentai: @agendamentos_experimentai

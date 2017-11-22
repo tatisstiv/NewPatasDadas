@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Experimental Schedulings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date time</th>
+      <th>Volunteer</th>
+      <th>Animal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @experimental_schedulings.each do |experimental_scheduling| %>
+      <tr>
+        <td><%= experimental_scheduling.date_time %></td>
+        <td><%= experimental_scheduling.volunteer %></td>
+        <td><%= experimental_scheduling.animal %></td>
+        <td><%= link_to 'Show', experimental_scheduling %></td>
+        <td><%= link_to 'Edit', edit_experimental_scheduling_path(experimental_scheduling) %></td>
+        <td><%= link_to 'Destroy', experimental_scheduling, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Experimental Scheduling', new_experimental_scheduling_path %>

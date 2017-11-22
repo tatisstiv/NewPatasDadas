@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date time:</strong>
+  <%= @experimental_scheduling.date_time %>
+</p>
+
+<p>
+  <strong>Volunteer:</strong>
+  <%= @experimental_scheduling.volunteer %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @experimental_scheduling.animal %>
+</p>
+
+<%= link_to 'Edit', edit_experimental_scheduling_path(@experimental_scheduling) %> |
+<%= link_to 'Back', experimental_schedulings_path %>

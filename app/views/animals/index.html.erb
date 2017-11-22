@@ -5,11 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Raca</th>
-      <th>Cor</th>
-      <th>Tamanho</th>
-      <th>Timestamps</th>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Color</th>
+      <th>Size</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +16,10 @@
   <tbody>
     <% @animals.each do |animal| %>
       <tr>
-        <td><%= animal.nome %></td>
-        <td><%= animal.raca %></td>
-        <td><%= animal.cor %></td>
-        <td><%= animal.tamanho %></td>
-        <td><%= animal.timestamps %></td>
+        <td><%= animal.name %></td>
+        <td><%= animal.breed %></td>
+        <td><%= animal.color %></td>
+        <td><%= animal.size %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
         <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>

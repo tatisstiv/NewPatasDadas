@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_time: 2017-11-22 16:43:12
+  volunteer: one
+  animal: one
+
+two:
+  date_time: 2017-11-22 16:43:12
+  volunteer: two
+  animal: two

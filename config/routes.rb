@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :agendamentos_fixos
-  resources :agendamentos_experimentais
-  resources :passeios
+  resources :volunteers
+  resources :fixed_schedulings
+  resources :experimental_schedulings
+  resources :walkings
   resources :animals
-  resources :voluntarios
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

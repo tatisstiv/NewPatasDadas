@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Day of week:</strong>
+  <%= @fixed_scheduling.day_of_week %>
+</p>
+
+<p>
+  <strong>Volunteer:</strong>
+  <%= @fixed_scheduling.volunteer %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @fixed_scheduling.animal %>
+</p>
+
+<%= link_to 'Edit', edit_fixed_scheduling_path(@fixed_scheduling) %> |
+<%= link_to 'Back', fixed_schedulings_path %>

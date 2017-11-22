@@ -1,0 +1,2 @@
+module FixedSchedulingsHelper
+end
