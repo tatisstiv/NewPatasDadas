@@ -30,7 +30,7 @@ class FixedSchedulingsController < ApplicationController
 
     respond_to do |format|
       if @fixed_scheduling.save
-        format.html { redirect_to @fixed_scheduling, notice: 'Fixed scheduling was successfully created.' }
+        format.html { redirect_to @fixed_scheduling, notice: 'Agendamento registrado com sucesso.' }
         format.json { render :show, status: :created, location: @fixed_scheduling }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class FixedSchedulingsController < ApplicationController
   def update
     respond_to do |format|
       if @fixed_scheduling.update(fixed_scheduling_params)
-        format.html { redirect_to @fixed_scheduling, notice: 'Fixed scheduling was successfully updated.' }
+        format.html { redirect_to @fixed_scheduling, notice: 'Agendamento atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @fixed_scheduling }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class FixedSchedulingsController < ApplicationController
   def destroy
     @fixed_scheduling.destroy
     respond_to do |format|
-      format.html { redirect_to fixed_schedulings_url, notice: 'Fixed scheduling was successfully destroyed.' }
+      format.html { redirect_to fixed_schedulings_url, notice: 'Agendamento excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

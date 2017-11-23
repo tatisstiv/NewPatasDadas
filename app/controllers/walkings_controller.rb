@@ -30,7 +30,7 @@ class WalkingsController < ApplicationController
 
     respond_to do |format|
       if @walking.save
-        format.html { redirect_to @walking, notice: 'Walking was successfully created.' }
+        format.html { redirect_to @walking, notice: 'Passeio registrado com sucesso.' }
         format.json { render :show, status: :created, location: @walking }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class WalkingsController < ApplicationController
   def update
     respond_to do |format|
       if @walking.update(walking_params)
-        format.html { redirect_to @walking, notice: 'Walking was successfully updated.' }
+        format.html { redirect_to @walking, notice: 'Passeio atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @walking }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class WalkingsController < ApplicationController
   def destroy
     @walking.destroy
     respond_to do |format|
-      format.html { redirect_to walkings_url, notice: 'Walking was successfully destroyed.' }
+      format.html { redirect_to walkings_url, notice: 'Passeio excluido com sucesso.' }
       format.json { head :no_content }
     end
   end

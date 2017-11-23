@@ -30,7 +30,7 @@ class ExperimentalSchedulingsController < ApplicationController
 
     respond_to do |format|
       if @experimental_scheduling.save
-        format.html { redirect_to @experimental_scheduling, notice: 'Experimental scheduling was successfully created.' }
+        format.html { redirect_to @experimental_scheduling, notice: 'Agendamento registrado com sucesso.' }
         format.json { render :show, status: :created, location: @experimental_scheduling }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ExperimentalSchedulingsController < ApplicationController
   def update
     respond_to do |format|
       if @experimental_scheduling.update(experimental_scheduling_params)
-        format.html { redirect_to @experimental_scheduling, notice: 'Experimental scheduling was successfully updated.' }
+        format.html { redirect_to @experimental_scheduling, notice: 'Agendamento atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @experimental_scheduling }
       else
         format.html { render :edit }
@@ -58,7 +58,7 @@ class ExperimentalSchedulingsController < ApplicationController
   def destroy
     @experimental_scheduling.destroy
     respond_to do |format|
-      format.html { redirect_to experimental_schedulings_url, notice: 'Experimental scheduling was successfully destroyed.' }
+      format.html { redirect_to experimental_schedulings_url, notice: 'Agendamento excluido com sucesso.' }
       format.json { head :no_content }
     end
   end
