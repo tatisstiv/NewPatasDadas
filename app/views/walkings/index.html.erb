@@ -16,8 +16,8 @@
     <% @walkings.each do |walking| %>
       <tr>
         <td><%= walking.date %></td>
-        <td><%= walking.volunteer %></td>
-        <td><%= walking.animal %></td>
+        <td><%= walking.volunteer.name %></td>
+        <td><%= walking.animal.name %></td>
         <td><%= link_to 'Show', walking %></td>
         <td><%= link_to 'Edit', edit_walking_path(walking) %></td>
         <td><%= link_to 'Destroy', walking, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -16,8 +16,8 @@
     <% @fixed_schedulings.each do |fixed_scheduling| %>
       <tr>
         <td><%= fixed_scheduling.day_of_week %></td>
-        <td><%= fixed_scheduling.volunteer %></td>
-        <td><%= fixed_scheduling.animal %></td>
+        <td><%= fixed_scheduling.volunteer.name %></td>
+        <td><%= fixed_scheduling.animal.name %></td>
         <td><%= link_to 'Show', fixed_scheduling %></td>
         <td><%= link_to 'Edit', edit_fixed_scheduling_path(fixed_scheduling) %></td>
         <td><%= link_to 'Destroy', fixed_scheduling, method: :delete, data: { confirm: 'Are you sure?' } %></td>
