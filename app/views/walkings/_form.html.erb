@@ -16,9 +16,15 @@
     <%= form.datetime_select :date, id: :walking_date %>
   </div>
 
-  <%= form.hidden_field :volunteer_id, id: :walking_volunteer_id %>
+  <div class="field">
+    <%= form.label :volunteer_id %>
+    <%= form.text_field :volunteer_id, id: :walking_volunteer_id %>
+  </div>
 
-  <%= form.hidden_field :animal_id, id: :walking_animal_id %>
+  <div class="field">
+    <%= form.label :animal_id %>
+    <%= form.text_field :animal_id, id: :walking_animal_id %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

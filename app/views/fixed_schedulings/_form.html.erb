@@ -16,9 +16,15 @@
     <%= form.text_field :day_of_week, id: :fixed_scheduling_day_of_week %>
   </div>
 
-  <%= form.hidden_field :volunteer_id, id: :fixed_scheduling_volunteer_id %>
+  <div class="field">
+    <%= form.label :volunteer_id %>
+    <%= form.text_field :volunteer_id, id: :fixed_scheduling_volunteer_id %>
+  </div>
 
-  <%= form.hidden_field :animal_id, id: :fixed_scheduling_animal_id %>
+  <div class="field">
+    <%= form.label :animal_id %>
+    <%= form.text_field :animal_id, id: :fixed_scheduling_animal_id %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

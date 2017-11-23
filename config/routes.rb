@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  resources :landing_pages
+  root 'landing_pages#index'
   resources :volunteers
+  get "/app/views/volunteers/index.html.erb", to: "volunteers#index", as: "index" 
   resources :fixed_schedulings
+  get "/app/views/fixed_schedulings/index.html.erb", to: "fixed_schedulings#index", as: "index1"
   resources :experimental_schedulings
+  get "/app/views/experimental_schedulings/index.html.erb", to: "experimental_schedulings#index", as: "index2"
   resources :walkings
+  get "/app/views/walkings/index.html.erb", to: "walkings#index", as: "index3"
   resources :animals
+  get "/app/views/animals/index.html.erb", to: "animals#index", as: "index4"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
