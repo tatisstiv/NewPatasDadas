@@ -16,8 +16,8 @@
     <% @experimental_schedulings.each do |experimental_scheduling| %>
       <tr>
         <td><%= experimental_scheduling.date_time %></td>
-        <td><%= experimental_scheduling.volunteer %></td>
-        <td><%= experimental_scheduling.animal %></td>
+        <td><%= experimental_scheduling.volunteer.name %></td>
+        <td><%= experimental_scheduling.animal.name %></td>
         <td><%= link_to 'Mostrar', experimental_scheduling %></td>
         <td><%= link_to 'Editar', edit_experimental_scheduling_path(experimental_scheduling) %></td>
       </tr>
@@ -28,3 +28,6 @@
 <br>
 
 <%= link_to 'Novo agendamento', new_experimental_scheduling_path %>
+
+<br>
+<%= link_to 'Página Inicial', landing_pages_path %>

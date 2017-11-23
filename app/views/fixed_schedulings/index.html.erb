@@ -16,8 +16,8 @@
     <% @fixed_schedulings.each do |fixed_scheduling| %>
       <tr>
         <td><%= fixed_scheduling.day_of_week %></td>
-        <td><%= fixed_scheduling.volunteer %></td>
-        <td><%= fixed_scheduling.animal %></td>
+        <td><%= fixed_scheduling.volunteer.name %></td>
+        <td><%= fixed_scheduling.animal.name %></td>
         <td><%= link_to 'Mostrar', fixed_scheduling %></td>
         <td><%= link_to 'Editar', edit_fixed_scheduling_path(fixed_scheduling) %></td>
       </tr>
@@ -28,3 +28,5 @@
 <br>
 
 <%= link_to 'Novo agendamento', new_fixed_scheduling_path %>
+<br>
+<%= link_to 'Página Inicial', landing_pages_path %>

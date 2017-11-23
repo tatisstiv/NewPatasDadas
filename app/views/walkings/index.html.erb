@@ -16,8 +16,8 @@
     <% @walkings.each do |walking| %>
       <tr>
         <td><%= walking.date %></td>
-        <td><%= walking.volunteer %></td>
-        <td><%= walking.animal %></td>
+        <td><%= walking.volunteer.name %></td>
+        <td><%= walking.animal.name %></td>
         <td><%= link_to 'Mostrar', walking %></td>
         <td><%= link_to 'Editar', edit_walking_path(walking) %></td>
       </tr>
@@ -28,3 +28,5 @@
 <br>
 
 <%= link_to 'Novo registro de passeio', new_walking_path %>
+<br>
+<%= link_to 'Página Inicial', landing_pages_path %>
