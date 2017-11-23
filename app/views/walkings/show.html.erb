@@ -7,12 +7,12 @@
 
 <p>
   <strong>Voluntário:</strong>
-  <%= @walking.volunteer %>
+  <%= @walking.volunteer.name %>
 </p>
 
 <p>
   <strong>Animal:</strong>
-  <%= @walking.animal %>
+  <%= @walking.animal.name %>
 </p>
 
 <%= link_to 'Editar', edit_walking_path(@walking) %> |

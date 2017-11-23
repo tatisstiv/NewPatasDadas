@@ -7,12 +7,12 @@
 
 <p>
   <strong>Voluntário:</strong>
-  <%= @experimental_scheduling.volunteer %>
+  <%= @experimental_scheduling.volunteer.name %>
 </p>
 
 <p>
   <strong>Animal:</strong>
-  <%= @experimental_scheduling.animal %>
+  <%= @experimental_scheduling.animal.name %>
 </p>
 
 <%= link_to 'Editar', edit_experimental_scheduling_path(@experimental_scheduling) %> |
