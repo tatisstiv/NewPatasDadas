@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208195455) do
+ActiveRecord::Schema.define(version: 20171209205826) do
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20171208195455) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.boolean "approved"
     t.index ["email"], name: "index_volunteers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_volunteers_on_reset_password_token", unique: true
   end
