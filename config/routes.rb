@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :volunteers, controllers: { registrations: 'registrations' }
   resources :landing_pages
   root 'landing_pages#index'
   resources :volunteers
