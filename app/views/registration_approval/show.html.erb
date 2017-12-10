@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @volunteer.name %>
+</p>
+
+<p>
+  <strong>Função:</strong>
+  <%= @volunteer.function %>
+</p>
+
+<p>
+  <strong>Texto de motivação:</strong><br/>
+  <%= simple_format(@volunteer.motivation_text) %>
+</p>
+
+<%= link_to 'Aprovar', approve_path(@volunteer), method: :post %>
+<%= link_to 'Rejeitar', reject_path(@volunteer), method: :delete %>
+<%= link_to 'Voltar', waiting_approval_path %>
+
+<br/>
+<br/>
+<%= link_to 'Página Inicial', landing_pages_path %>

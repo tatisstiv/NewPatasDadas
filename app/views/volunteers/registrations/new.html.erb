@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
   
   <div class="field">
-    <%= f.label :name, "Nome" %>
+    <%= f.label :nome, "Nome" %>
     <%= f.text_field :name, autofocus: true, id: :volunteer_name %>
   </div>
   
@@ -29,6 +29,11 @@
   <div class="field">
     <%= f.label :password_confirmation, "Confirmar senha" %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :motivation_text, "Texto de motivação: por que você quer ser um voluntário?" %>
+    <%= f.text_area :motivation_text %>
   </div>
 
   <div class="actions">

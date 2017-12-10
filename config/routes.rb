@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   devise_for :volunteers, controllers: { registrations: 'registrations' }
   resources :landing_pages
   root 'landing_pages#index'
+  
+  get "/volunteers/waiting_approval", to: "registration_approval#waiting_approval", as: "waiting_approval"
+  get "/volunteers/waiting_approval/:id", to: "registration_approval#show", as: "show_registration_request"
+  post "/volunteers/waiting_approval/:id", to: "registration_approval#approve", as: "approve"
+  delete "/volunteers/waiting_approval/:id", to: "registration_approval#reject", as: "reject"
   resources :volunteers
+  
   get "/app/views/volunteers/index.html.erb", to: "volunteers#index", as: "index" 
   resources :fixed_schedulings
   get "/app/views/fixed_schedulings/index.html.erb", to: "fixed_schedulings#index", as: "index1"

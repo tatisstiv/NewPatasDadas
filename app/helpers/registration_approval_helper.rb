@@ -1,0 +1,2 @@
+module RegistrationApprovalHelper
+end

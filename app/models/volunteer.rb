@@ -1,4 +1,6 @@
 class Volunteer < ApplicationRecord
+  validates :name, :function, :motivation_text, presence: true
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,8 +14,7 @@ class Volunteer < ApplicationRecord
     if !approved? 
       :not_approved 
     else 
-      super # Use whatever other message 
+      super
     end 
   end
-  
 end

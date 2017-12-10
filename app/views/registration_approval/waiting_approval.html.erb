@@ -1,0 +1,27 @@
+<h1>Voluntários aguardando aprovação</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Função</th>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @volunteers.each do |volunteer| %>
+      <tr>
+        <td><%= volunteer.function %></td>
+        <td><%= volunteer.name %></td>
+        <td><%= link_to 'Mostrar', show_registration_request_path(volunteer) %></td>
+        <td><%= link_to 'Aprovar', approve_path(volunteer), method: :post %></td>
+        <td><%= link_to 'Rejeitar', reject_path(volunteer), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Página Inicial', landing_pages_path %>
