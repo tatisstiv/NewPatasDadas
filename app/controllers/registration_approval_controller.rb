@@ -1,4 +1,5 @@
 class RegistrationApprovalController < ApplicationController
+  before_action :ensure_gestor!
   before_action :set_volunteer, only: [:show, :approve, :reject]
   
   def waiting_approval
@@ -34,5 +35,15 @@ class RegistrationApprovalController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_volunteer
       @volunteer = Volunteer.find(params[:id])
+    end
+  
+    def ensure_gestor!
+      unless current_volunteer.Gestor?
+        render_403
+      end
+    end
+    
+    def render_403
+      render file: "#{Rails.root}/public/403.html", status: :forbidden, layout: false
     end
 end

@@ -1,13 +1,11 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <strong>Nome:</strong>
+  <%= @volunteer.name %>
+</p>
 
 <p>
   <strong>Função:</strong>
   <%= @volunteer.function %>
-</p>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @volunteer.name %>
 </p>
 
 <%= link_to 'Editar', edit_volunteer_path(@volunteer) %> |

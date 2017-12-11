@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :function, "Função" %>
-    <%= form.text_field :function, id: :volunteer_function %>
+    <%= form.label :name, "Nome" %>
+    <%= form.text_field :name, id: :volunteer_name %>
   </div>
 
   <div class="field">
-    <%= form.label :name, "Nome" %>
-    <%= form.text_field :name, id: :volunteer_name %>
+    <%= form.label :function, "Função" %>
+    <%= form.select :function, Volunteer.functions.keys %>
   </div>
 
   <div class="actions">

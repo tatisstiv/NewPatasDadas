@@ -10,7 +10,7 @@
   
   <div class="field">
     <%= f.label :function, "Função" %>
-    <%= f.text_field :function, id: :volunteer_function %>
+    <%= f.select :function, Volunteer.functions.keys %>
   </div>
 
   <div class="field">
@@ -32,7 +32,7 @@
   </div>
   
   <div class="field">
-    <%= f.label :motivation_text, "Texto de motivação: por que você quer ser um voluntário?" %>
+    <%= f.label :motivation_text, "Texto de motivação: explique por que você quer ser voluntário." %>
     <%= f.text_area :motivation_text %>
   </div>
 

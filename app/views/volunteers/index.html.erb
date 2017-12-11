@@ -1,12 +1,10 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Voluntários</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Função</th>
       <th>Nome</th>
+      <th>Função</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +12,8 @@
   <tbody>
     <% @volunteers.each do |volunteer| %>
       <tr>
-        <td><%= volunteer.function %></td>
         <td><%= volunteer.name %></td>
+        <td><%= volunteer.function %></td>
         <td><%= link_to 'Mostrar', volunteer %></td>
         <td><%= link_to 'Editar', edit_volunteer_path(volunteer) %></td>
       </tr>
@@ -26,5 +24,7 @@
 <br>
 
 <%= link_to 'Novo voluntário', new_volunteer_path %>
+<br>
+<%= link_to 'Voluntários aguardando aprovação', waiting_approval_path if current_volunteer.Gestor? %>
 <br>
 <%= link_to 'Página Inicial', landing_pages_path %>

@@ -4,7 +4,7 @@ class VolunteersController < ApplicationController
   # GET /volunteers
   # GET /volunteers.json
   def index
-    @volunteers = Volunteer.all
+    @volunteers = Volunteer.where(approved: true)
   end
 
   # GET /volunteers/1

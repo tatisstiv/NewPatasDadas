@@ -10,7 +10,7 @@
   
   <div class="field">
     <%= f.label :function, "Função" %>
-    <%= f.text_field :function, id: :volunteer_function %>
+    <%= f.select :function, Volunteer.functions.keys %>
   </div>
 
   <div class="field">
