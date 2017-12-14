@@ -5,3 +5,92 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+now = DateTime.new(2017, 12, 14, 11, 25, 00)
+
+volunteer = Volunteer.create(
+  name: "teste_experimental_schedulings",
+  function: :Gestor,
+  motivation_text: "Teste.",
+  email: "teste_experimental_schedulings@example.com",
+  password: "blabla",
+  password_confirmation: "blabla"
+)
+
+animals = Animal.create([
+  {
+    name: "0 0",
+    color: "preto",
+    size: "medio"
+  }, {
+    name: "2 0",
+    color: "preto",
+    size: "medio"
+  }, {
+    name: "2 1",
+    color: "preto",
+    size: "medio"
+  }, {
+    name: "0 2",
+    color: "preto",
+    size: "medio"
+  }, {
+    name: "1 3",
+    color: "preto",
+    size: "medio"
+  }, 
+].reverse)
+
+ExperimentalScheduling.create([
+  {
+    volunteer: volunteer,
+    animal: animals[3],
+    date_time: now - 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[3],
+    date_time: now - 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[2],
+    date_time: now - 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[2],
+    date_time: now - 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[2],
+    date_time: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[1],
+    date_time: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[1],
+    date_time: now + 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date_time: now - 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date_time: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date_time: now + 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date_time: now + 3
+  }, 
+])
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+<h1>Escolha um animal:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cor</th>
+      <th>Tamanho</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td><%= link_to animal.name, new_experimental_scheduling_path(animal) %></td>
+        <td><%= animal.color %></td>
+        <td><%= animal.size %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Voltar', experimental_schedulings_path %>
+<br>
+<%= link_to 'Página Inicial', landing_pages_path %>

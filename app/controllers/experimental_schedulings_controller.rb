@@ -4,7 +4,7 @@ class ExperimentalSchedulingsController < ApplicationController
   # GET /experimental_schedulings
   # GET /experimental_schedulings.json
   def index
-    @experimental_schedulings = ExperimentalScheduling.all
+    @experimental_schedulings = ExperimentalScheduling.where(volunteer: current_volunteer)
   end
 
   # GET /experimental_schedulings/1
@@ -15,7 +15,7 @@ class ExperimentalSchedulingsController < ApplicationController
   # GET /experimental_schedulings/new
   def new
     @experimental_scheduling = ExperimentalScheduling.new
-    @experimental_scheduling.volunteer_id = 1
+    @experimental_scheduling.volunteer_id = current_volunteer.id
     @experimental_scheduling.animal_id = params[:animal_id]
   end
 
@@ -61,6 +61,22 @@ class ExperimentalSchedulingsController < ApplicationController
       format.html { redirect_to experimental_schedulings_url, notice: 'Agendamento excluido com sucesso.' }
       format.json { head :no_content }
     end
+  end
+  
+  def animal_choices
+    @animals = Animal.find_by_sql("
+      SELECT animals.*
+      FROM animals
+      LEFT OUTER JOIN (
+        SELECT animal_id
+        FROM experimental_schedulings
+        WHERE date_time > CURRENT_TIMESTAMP
+      )
+      AS future_schedulings
+      ON future_schedulings.animal_id = animals.id
+      GROUP BY animals.id
+      ORDER BY COUNT(future_schedulings.animal_id)
+    ")
   end
 
   private
