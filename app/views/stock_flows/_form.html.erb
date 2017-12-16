@@ -13,7 +13,12 @@
 
   <div class="field">
     <%= form.label :in_out,"Entrada ou saida?" %>
-    <%= form.text_field :in_out, id: :stock_flow_in_out %>
+    <%= form.select :in_out, options_for_select(
+      [
+        ["Entrada", "Entrada"],
+        ["Saída", "Saída"]
+      ]
+    ) %>
   </div>
 
   <div class="field">

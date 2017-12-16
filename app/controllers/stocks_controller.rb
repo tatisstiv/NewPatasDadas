@@ -4,8 +4,10 @@ class StocksController < ApplicationController
   # GET /stocks
   # GET /stocks.json
   def index
-    @stocks = Stock.all
+    @stocks = Stock.search(params[:term])
   end
+  
+  
 
   # GET /stocks/1
   # GET /stocks/1.json
@@ -69,6 +71,6 @@ class StocksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stock_params
-      params.require(:stock).permit(:name, :amount, :kind)
+      params.require(:stock).permit(:name, :amount, :kind, :term)
     end
 end

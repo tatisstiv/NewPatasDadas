@@ -2,6 +2,12 @@
 
 <h1>Estoque</h1>
 
+<%= form_tag(stocks_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term] %>
+  <%= submit_tag 'Buscar', name: nil %>
+<% end %>
+<br>
+
 <table>
   <thead>
     <tr>
