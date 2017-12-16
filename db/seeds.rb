@@ -9,12 +9,13 @@
 now = DateTime.new(2017, 12, 14, 11, 25, 00)
 
 volunteer = Volunteer.create(
-  name: "teste_experimental_schedulings",
+  name: "Admin",
   function: :Gestor,
   motivation_text: "Teste.",
-  email: "teste_experimental_schedulings@example.com",
+  email: "admin@example.com",
   password: "blabla",
-  password_confirmation: "blabla"
+  password_confirmation: "blabla",
+  approved: true
 )
 
 animals = Animal.create([

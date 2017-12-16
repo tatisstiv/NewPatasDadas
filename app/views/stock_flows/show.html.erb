@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entrada ou saida:</strong>
+  <%= @stock_flow.in_out %>
+</p>
+
+<p>
+  <strong>Dia, hora:</strong>
+  <%= @stock_flow.time %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @stock_flow.name %>
+</p>
+
+<p>
+  <strong>Quantidade:</strong>
+  <%= @stock_flow.amount %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @stock_flow.kind %>
+</p>
+
+<p>
+  <strong>Origem/destino:</strong>
+  <%= @stock_flow.origin_destiny %>
+</p>
+
+<%= link_to 'Edit', edit_stock_flow_path(@stock_flow) %> |
+<%= link_to 'Back', stock_flows_path %>

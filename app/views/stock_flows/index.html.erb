@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fluxo do estoque</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Entrada ou saída?</th>
+      <th>Dia, hora</th>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Tipo</th>
+      <th>Origem/destino</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_flows.each do |stock_flow| %>
+      <tr>
+        <td><%= stock_flow.in_out %></td>
+        <td><%= stock_flow.time %></td>
+        <td><%= stock_flow.name %></td>
+        <td><%= stock_flow.amount %></td>
+        <td><%= stock_flow.kind %></td>
+        <td><%= stock_flow.origin_destiny %></td>
+        <td><%= link_to 'Mostrar', stock_flow %></td>
+        <td><%= link_to 'Editar', edit_stock_flow_path(stock_flow) %></td>
+        <td><%= link_to 'Destruir', stock_flow, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>/stocks
+
+<br>
+
+<%= link_to 'Acrescentar/remover itens do estoque', new_stock_flow_path %>
+<br>
+<%= link_to 'Voltar para o estoque', stocks_path %>
+<br>
+<%= link_to 'Página Inicial', landing_pages_path %>

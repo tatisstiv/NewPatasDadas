@@ -1,0 +1,47 @@
+<%= form_with(model: stock_flow, local: true) do |form| %>
+  <% if stock_flow.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_flow.errors.count, "error") %> prohibited this stock_flow from being saved:</h2>
+
+      <ul>
+      <% stock_flow.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :in_out,"Entrada ou saida?" %>
+    <%= form.text_field :in_out, id: :stock_flow_in_out %>
+  </div>
+
+  <div class="field">
+    <%= form.label :time, "Dia, hora" %>
+    <%= form.datetime_select :time, id: :stock_flow_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, "Nome" %>
+    <%= form.text_field :name, id: :stock_flow_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount, "Quantidade" %>
+    <%= form.text_field :amount, id: :stock_flow_amount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kind, "Tipo" %>
+    <%= form.text_field :kind, id: :stock_flow_kind %>
+  </div>
+
+  <div class="field">
+    <%= form.label :origin_destiny, "Origem/destino" %>
+    <%= form.text_field :origin_destiny, id: :stock_flow_origin_destiny %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

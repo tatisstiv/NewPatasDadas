@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stock_flows
+  resources :stocks
   devise_for :volunteers, controllers: { registrations: 'registrations' }
   resources :landing_pages
   root 'landing_pages#index'
@@ -22,5 +24,10 @@ Rails.application.routes.draw do
   get "/app/views/walkings/index.html.erb", to: "walkings#index", as: "index3"
   resources :animals
   get "/app/views/animals/index.html.erb", to: "animals#index", as: "index4"
+
+  resources :stock_flows
+  get "/app/views/stock_flows/index.html.erb", to: "stock_flows#index"
+  resources :stocks
+  get "/app/views/stocks/index.html.erb", to: "stocks#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

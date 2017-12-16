@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214131647) do
+ActiveRecord::Schema.define(version: 20171216215354) do
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
@@ -41,6 +41,25 @@ ActiveRecord::Schema.define(version: 20171214131647) do
   end
 
   create_table "landing_pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_flows", force: :cascade do |t|
+    t.string "in_out"
+    t.datetime "time"
+    t.string "name"
+    t.float "amount"
+    t.string "kind"
+    t.string "origin_destiny"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name"
+    t.float "amount"
+    t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
