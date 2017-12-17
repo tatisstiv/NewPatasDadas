@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <p>Animal: <%= @fixed_scheduling.animal.name %></p>
+  </div>
 
   <div class="field">
     <%= form.label :day_of_week, "Dia da semana" %>
@@ -24,16 +28,15 @@
       ]
     ) %>
   </div>
-
+  
   <div class="field">
-    <%= form.label :volunteer_id, "Voluntário" %>
-    <%= form.text_field :volunteer_id, id: :fixed_scheduling_volunteer_id %>
+    <%= form.label :hour, "Horário" %>
+    <%= form.time_field :hour, id: @fixed_scheduling.hour %>
   </div>
+  
+  <%= form.hidden_field :animal_id, id: @fixed_scheduling.animal_id %>
 
-  <div class="field">
-    <%= form.label :animal_id, "Animal" %>
-    <%= form.text_field :animal_id, id: :fixed_scheduling_animal_id %>
-  </div>
+  <%= form.hidden_field :volunteer_id, id: @fixed_scheduling.volunteer_id %>
 
   <div class="actions">
     <%= form.submit "Salvar" %>

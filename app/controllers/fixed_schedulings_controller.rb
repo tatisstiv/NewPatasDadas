@@ -15,7 +15,7 @@ class FixedSchedulingsController < ApplicationController
   # GET /fixed_schedulings/new
   def new
     @fixed_scheduling = FixedScheduling.new
-    @fixed_scheduling.volunteer_id = 1
+    @fixed_scheduling.volunteer_id = current_volunteer.id
     @fixed_scheduling.animal_id = params[:animal_id]
   end
 
@@ -62,6 +62,10 @@ class FixedSchedulingsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def animal_choices
+    @animals = Animal.ready_for_fixed_scheduling_with(current_volunteer)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,6 +75,6 @@ class FixedSchedulingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fixed_scheduling_params
-      params.require(:fixed_scheduling).permit(:day_of_week, :volunteer_id, :animal_id)
+      params.require(:fixed_scheduling).permit(:day_of_week, :hour, :volunteer_id, :animal_id)
     end
 end

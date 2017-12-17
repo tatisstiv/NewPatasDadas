@@ -18,6 +18,16 @@ volunteer = Volunteer.create(
   approved: true
 )
 
+volunteer2 = Volunteer.create(
+  name: "Admin2",
+  function: :Gestor,
+  motivation_text: "Teste.",
+  email: "admin2@example.com",
+  password: "blabla",
+  password_confirmation: "blabla",
+  approved: true
+)
+
 animals = Animal.create([
   {
     name: "0 0",
@@ -90,7 +100,53 @@ ExperimentalScheduling.create([
   }, 
 ])
 
-
+Walking.create([
+  {
+    volunteer: volunteer2,
+    animal: animals[3],
+    date: now - 1
+  }, {
+    volunteer: volunteer2,
+    animal: animals[3],
+    date: now - 2
+  }, {
+    volunteer: volunteer2,
+    animal: animals[2],
+    date: now - 1
+  }, {
+    volunteer: volunteer2,
+    animal: animals[2],
+    date: now - 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[2],
+    date: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[1],
+    date: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[1],
+    date: now + 2
+  }, {
+    volunteer: volunteer2,
+    animal: animals[0],
+    date: now - 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date: now + 1
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date: now + 2
+  }, {
+    volunteer: volunteer,
+    animal: animals[0],
+    date: now + 3
+  }, 
+])
 
 
 
