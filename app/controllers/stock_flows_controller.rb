@@ -1,5 +1,6 @@
 class StockFlowsController < ApplicationController
   before_action :set_stock_flow, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_volunteer!
 
   # GET /stock_flows
   # GET /stock_flows.json

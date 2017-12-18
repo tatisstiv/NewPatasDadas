@@ -1,5 +1,6 @@
 class ExperimentalSchedulingsController < ApplicationController
   before_action :set_experimental_scheduling, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_volunteer!
 
   # GET /experimental_schedulings
   # GET /experimental_schedulings.json

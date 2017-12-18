@@ -1,9 +1,16 @@
-<center><img src='http://1.bp.blogspot.com/-BWKGpZ-jIbs/UiPcUvB7laI/AAAAAAAAAi4/5zLwAxdyDzk/s1600/484480_509871199038619_1940692855_n.jpg' height="288" width="287.1"></center>
-<div style='font-size:20px'>
-<a href="/volunteers">Voluntários</a> <br> <br>
-<a href="/fixed_schedulings">Agendamentos Fixos</a> <br> <br>
-<a href="/experimental_schedulings">Agendamentos Experimentais</a> <br> <br>
-<a href="/walkings">Passeios</a> <br> <br>
-<a href="/animals">Cães</a> <br> <br>
-<%= link_to 'Estoque', stocks_path if current_volunteer.Gestor? %>
+<div class="landing_page">
+<div style="padding:20px; background-color:#ff9900;">
+<a href="/volunteers" style="color:#ffffff">Voluntários</a><br> <br>
+</div>
+<div style="padding:20px;">
+<a href="/fixed_schedulings" style="color:#000000">Agendamentos Fixos</a> <br> <br>
+<a href="/experimental_schedulings" style="color:#000000">Agendamentos Experimentais</a> <br> <br>
+<a href="/walkings" style="color:#000000">Passeios</a><br> <br>
+</div>
+<div style="padding:20px; background-color:#ff9900;">
+<a href="/animals" style="color:#ffffff">Cães</a> <br> <br>
+</div>
+<br>
+<%= link_to 'Estoque', stocks_path if current_volunteer.Gestor? %> <br> <br>
+<%= link_to 'Requisições de adoção', adopters_path if current_volunteer.Gestor? %> <br> <br>
 </div>

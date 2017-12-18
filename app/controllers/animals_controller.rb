@@ -61,6 +61,14 @@ class AnimalsController < ApplicationController
     end
   end
 
+  def adopt
+    respond_to do |format|
+      format.html { redirect_to adoptions_url}
+      format.json { head :no_content }
+    end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_animal

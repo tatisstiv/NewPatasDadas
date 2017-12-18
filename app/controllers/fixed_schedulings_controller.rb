@@ -1,5 +1,6 @@
 class FixedSchedulingsController < ApplicationController
   before_action :set_fixed_scheduling, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_volunteer!
 
   # GET /fixed_schedulings
   # GET /fixed_schedulings.json

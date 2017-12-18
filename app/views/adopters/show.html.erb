@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @adopter.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @adopter.email %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @adopter.telephone %>
+</p>
+
+<p>
+  <strong>Animal:</strong>
+  <%= @adopter.animal %>
+</p>
+
+<%= link_to 'Edit', edit_adopter_path(@adopter) %> |
+<%= link_to 'Back', adopters_path %>

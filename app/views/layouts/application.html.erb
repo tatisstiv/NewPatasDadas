@@ -13,6 +13,10 @@
   </head>
 
   <body>
+  <div>
+  <img class="logo" src='http://1.bp.blogspot.com/-BWKGpZ-jIbs/UiPcUvB7laI/AAAAAAAAAi4/5zLwAxdyDzk/s1600/484480_509871199038619_1940692855_n.jpg' height="144" width="143.55">
+  <span class="header">Patas Dadas</span>
+  </div>
     <%= yield %>
     <%= link_to 'Log out', destroy_volunteer_session_path, method: :delete if volunteer_signed_in? %>
   </body>

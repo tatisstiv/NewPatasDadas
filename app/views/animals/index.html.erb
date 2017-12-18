@@ -17,7 +17,8 @@
         <td><%= animal.color %></td>
         <td><%= animal.size %></td>
         <td><%= link_to 'Mostrar', animal %></td>
-        <td><%= link_to 'Editar', edit_animal_path(animal) %></td>
+        <td><%= link_to 'Editar', edit_animal_path(animal) if volunteer_signed_in? %></td>
+         <td><%= link_to 'Adotar', new_adopter_path(animal) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,7 +26,7 @@
 
 <br>
 
-<%= link_to 'Novo animal', new_animal_path %>
+<%= link_to 'Novo animal', new_animal_path if volunteer_signed_in? %>
 
 <br>
 <%= link_to 'Página Inicial', landing_pages_path %>

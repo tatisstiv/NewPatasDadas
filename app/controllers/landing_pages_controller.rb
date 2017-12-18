@@ -1,5 +1,6 @@
 class LandingPagesController < ApplicationController
   before_action :set_landing_page, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_volunteer!
 
   # GET /landing_pages
   # GET /landing_pages.json

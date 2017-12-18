@@ -1,5 +1,6 @@
 class WalkingsController < ApplicationController
   before_action :set_walking, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_volunteer!
 
   # GET /walkings
   # GET /walkings.json

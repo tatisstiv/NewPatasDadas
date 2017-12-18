@@ -1,0 +1,37 @@
+<%= form_with(model: adopter, local: true) do |form| %>
+  <% if adopter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adopter.errors.count, "error") %> prohibited this adopter from being saved:</h2>
+
+      <ul>
+      <% adopter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Seu nome completo" %>
+    <%= form.text_field :name, id: :adopter_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, "E-mail" %>
+    <%= form.text_field :email, id: :adopter_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telephone, "Telefone (somente números)" %>
+    <%= form.number_field :telephone, id: :adopter_telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :animal, "Nome do animal que pretende adotar" %>
+    <%= form.text_field :animal, id: :adopter_animal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

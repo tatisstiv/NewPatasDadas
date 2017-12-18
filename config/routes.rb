@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :adopters
   resources :stock_flows
   resources :stocks
   devise_for :volunteers, controllers: { registrations: 'registrations' }
