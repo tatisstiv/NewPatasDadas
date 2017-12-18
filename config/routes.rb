@@ -13,13 +13,15 @@ Rails.application.routes.draw do
   resources :volunteers
   get "/app/views/volunteers/index.html.erb", to: "volunteers#index", as: "index" 
   
-  resources :fixed_schedulings
-  get "/app/views/fixed_schedulings/index.html.erb", to: "fixed_schedulings#index", as: "index1"
-  
-  get "/experimental_schedulings/animal_choices", to: "experimental_schedulings#animal_choices", as: "animal_choices"
+  get "/experimental_schedulings/animal_choices", to: "experimental_schedulings#animal_choices", as: "experimental_animal_choices"
   resources :experimental_schedulings, except: :new
   get "/experimental_schedulings/new/:animal_id", to: "experimental_schedulings#new", as: "new_experimental_scheduling"
   get "/app/views/experimental_schedulings/index.html.erb", to: "experimental_schedulings#index", as: "index2"
+    
+  get "/fixed_schedulings/animal_choices", to: "fixed_schedulings#animal_choices", as: "fixed_animal_choices"
+  resources :fixed_schedulings, except: :new
+  get "/fixed_schedulings/new/:animal_id", to: "fixed_schedulings#new", as: "new_fixed_scheduling"
+  get "/app/views/fixed_schedulings/index.html.erb", to: "fixed_schedulings#index", as: "index1"
   
   resources :walkings
   get "/app/views/walkings/index.html.erb", to: "walkings#index", as: "index3"

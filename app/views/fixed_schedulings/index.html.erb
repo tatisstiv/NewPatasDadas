@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Dia da semana</th>
+      <th>Horário</th>
       <th>Voluntário</th>
       <th>Animal</th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
     <% @fixed_schedulings.each do |fixed_scheduling| %>
       <tr>
         <td><%= fixed_scheduling.day_of_week %></td>
+        <td><%= fixed_scheduling.hour.strftime("%H:%M") %></td>
         <td><%= fixed_scheduling.volunteer.name %></td>
         <td><%= fixed_scheduling.animal.name %></td>
         <td><%= link_to 'Mostrar', fixed_scheduling %></td>
@@ -25,6 +27,6 @@
 
 <br>
 
-<%= link_to 'Novo agendamento', new_fixed_scheduling_path %>
+<%= link_to 'Novo agendamento', fixed_animal_choices_path %>
 <br>
 <%= link_to 'Página Inicial', landing_pages_path %>

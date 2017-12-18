@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20171218001040) do
 
   create_table "adopters", force: :cascade do |t|
@@ -28,6 +29,9 @@ ActiveRecord::Schema.define(version: 20171218001040) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+=======
+ActiveRecord::Schema.define(version: 20171217173808) do
+>>>>>>> d5fa9fa9260b9ef011d49b6876bde2a5738dc7ec
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
@@ -53,6 +57,7 @@ ActiveRecord::Schema.define(version: 20171218001040) do
     t.integer "animal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "hour"
     t.index ["animal_id"], name: "index_fixed_schedulings_on_animal_id"
     t.index ["volunteer_id"], name: "index_fixed_schedulings_on_volunteer_id"
   end

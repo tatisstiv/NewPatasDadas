@@ -65,19 +65,7 @@ class ExperimentalSchedulingsController < ApplicationController
   end
   
   def animal_choices
-    @animals = Animal.find_by_sql("
-      SELECT animals.*
-      FROM animals
-      LEFT OUTER JOIN (
-        SELECT animal_id
-        FROM experimental_schedulings
-        WHERE date_time > CURRENT_TIMESTAMP
-      )
-      AS future_schedulings
-      ON future_schedulings.animal_id = animals.id
-      GROUP BY animals.id
-      ORDER BY COUNT(future_schedulings.animal_id)
-    ")
+    @animals = Animal.choices_for_experimental_scheduling
   end
 
   private
