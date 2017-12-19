@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :volunteer_id, "Voluntário" %>
-    <%= form.text_field :volunteer_id, id: :walking_volunteer_id %>
+    <%= form.collection_select :volunteer_id, Volunteer.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :animal_id, "Animal" %>
-    <%= form.text_field :animal_id, id: :walking_animal_id %>
+    <%= form.collection_select :animal_id, Animal.all, :id, :name %>
   </div>
 
   <div class="actions">

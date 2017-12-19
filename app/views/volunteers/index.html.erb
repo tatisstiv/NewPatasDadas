@@ -23,8 +23,6 @@
 
 <br>
 
-<%= link_to 'Novo voluntário', new_volunteer_path %>
-<br>
 <%= link_to 'Voluntários aguardando aprovação', waiting_approval_path if current_volunteer.Gestor? %>
 <br>
 <%= link_to 'Página Inicial', landing_pages_path %>
